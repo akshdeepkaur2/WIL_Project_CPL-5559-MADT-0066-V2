@@ -15,7 +15,11 @@
 		758885D623C7B8E4008D1E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758885D523C7B8E4008D1E6C /* Assets.xcassets */; };
 		758885D923C7B8E4008D1E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758885D723C7B8E4008D1E6C /* LaunchScreen.storyboard */; };
 		75AC225823CE228A00296442 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC225723CE228A00296442 /* MenuViewController.swift */; };
-		75D50B4D23D641390067F729 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B4C23D641390067F729 /* ProfileViewController.swift */; };
+		75D50B4D23D641390067F729 /* MainManuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B4C23D641390067F729 /* MainManuViewController.swift */; };
+		75D50B5123D76B410067F729 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B5023D76B410067F729 /* ProfileViewController.swift */; };
+		75D50B5323D76DF60067F729 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B5223D76DF60067F729 /* PaymentsViewController.swift */; };
+		75D50B5723D76E620067F729 /* TherapyNearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B5623D76E620067F729 /* TherapyNearbyViewController.swift */; };
+		75D50B5923D76F270067F729 /* TherapyCenterReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D50B5823D76F270067F729 /* TherapyCenterReviewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +33,11 @@
 		758885D823C7B8E4008D1E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758885DA23C7B8E4008D1E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75AC225723CE228A00296442 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		75D50B4C23D641390067F729 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		75D50B4C23D641390067F729 /* MainManuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManuViewController.swift; sourceTree = "<group>"; };
+		75D50B5023D76B410067F729 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		75D50B5223D76DF60067F729 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		75D50B5623D76E620067F729 /* TherapyNearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyNearbyViewController.swift; sourceTree = "<group>"; };
+		75D50B5823D76F270067F729 /* TherapyCenterReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyCenterReviewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +75,15 @@
 				758885D023C7B8E1008D1E6C /* HomeViewController.swift */,
 				75AC225723CE228A00296442 /* MenuViewController.swift */,
 				752E617323CF8C0900B297EB /* MenuSlideTransition.swift */,
+				75D50B5023D76B410067F729 /* ProfileViewController.swift */,
+				75D50B4C23D641390067F729 /* MainManuViewController.swift */,
 				758885D223C7B8E1008D1E6C /* Main.storyboard */,
 				758885D523C7B8E4008D1E6C /* Assets.xcassets */,
 				758885D723C7B8E4008D1E6C /* LaunchScreen.storyboard */,
 				758885DA23C7B8E4008D1E6C /* Info.plist */,
-				75D50B4C23D641390067F729 /* ProfileViewController.swift */,
+				75D50B5223D76DF60067F729 /* PaymentsViewController.swift */,
+				75D50B5623D76E620067F729 /* TherapyNearbyViewController.swift */,
+				75D50B5823D76F270067F729 /* TherapyCenterReviewsViewController.swift */,
 			);
 			path = Fathce;
 			sourceTree = "<group>";
@@ -147,12 +159,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75D50B4D23D641390067F729 /* ProfileViewController.swift in Sources */,
+				75D50B4D23D641390067F729 /* MainManuViewController.swift in Sources */,
+				75D50B5923D76F270067F729 /* TherapyCenterReviewsViewController.swift in Sources */,
 				758885D123C7B8E1008D1E6C /* HomeViewController.swift in Sources */,
 				752E617423CF8C0900B297EB /* MenuSlideTransition.swift in Sources */,
+				75D50B5723D76E620067F729 /* TherapyNearbyViewController.swift in Sources */,
 				758885CD23C7B8E1008D1E6C /* AppDelegate.swift in Sources */,
+				75D50B5123D76B410067F729 /* ProfileViewController.swift in Sources */,
 				758885CF23C7B8E1008D1E6C /* SceneDelegate.swift in Sources */,
 				75AC225823CE228A00296442 /* MenuViewController.swift in Sources */,
+				75D50B5323D76DF60067F729 /* PaymentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

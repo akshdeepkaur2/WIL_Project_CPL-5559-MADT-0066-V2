@@ -11,67 +11,64 @@ import UIKit
 class HomeViewController: UIViewController {
     let transition = MenuSlideTransition()
     var topView:UIView?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
+    // menu burger button clicked
     @IBAction func menuClicked(_ sender: UIBarButtonItem) {
         
-        guard let menuViewController = storyboard?.instantiateViewController(identifier: "menuViewController") as? MenuViewController else {return}
+        guard let menuViewController = storyboard?.instantiateViewController(identifier: "MainPage") as? MenuViewController else {return}
         menuViewController.didMenutype = {
              menuType in
             self.transitionToContent(menuType)
-           // print(menuType)
-                
-                
         }
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
     }
+    // menu transition to selected page or view from menu list
     func transitionToContent(_ menuType: MenuType) {
         let title = String(describing: menuType).capitalized
         self.title = title
         topView?.removeFromSuperview()
         switch menuType {
-        case .profile:
-             nextView()
-//                UIView()
-//            view.backgroundColor = .green
+        case .mainpage:
+            mainMenu()
+//            
+            case .goback:
+            returnHome()
+//            
+//            case .home:
+//            let view = UIView()
+//            view.backgroundColor = .yellow
 //            view.frame = self.view.bounds
 //            self.view.addSubview(view)
 //            self.topView = view
-            
-            case .therapyCenter:
-            let view = UIView()
-            view.backgroundColor = .blue
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
-            
-            case .home:
-            let view = UIView()
-            view.backgroundColor = .yellow
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
-            
         default:
             break
         }
     }
     
-    func nextView()
+    // calling profile view
+    func mainMenu()
     {
-        guard let nextView = storyboard?.instantiateViewController(identifier: "ProfileViewController") else {return}
+        guard let nextView = storyboard?.instantiateViewController(identifier: "mainManu") else {return}
         nextView.modalPresentationStyle = .overCurrentContext
         nextView.transitioningDelegate = nil
         present(nextView, animated: true)
     }
+    
+    func returnHome()
+    {
+        guard let nextView = storyboard?.instantiateViewController(identifier:"navigationController") else {return}
+        nextView.modalPresentationStyle = .overCurrentContext
+        nextView.transitioningDelegate = nil
+        present(nextView, animated: true)
+    }
+   
 }
-
+// menu animation extention
 extension HomeViewController  :UIViewControllerTransitioningDelegate
 {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

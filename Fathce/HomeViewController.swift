@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class HomeViewController: UIViewController {
     let transition = MenuSlideTransition()
     var topView:UIView?
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
     }
     // menu burger button clicked
     @IBAction func menuClicked(_ sender: UIBarButtonItem) {
@@ -27,6 +33,21 @@ class HomeViewController: UIViewController {
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
     }
+    
+    // adding mapview
+    @IBOutlet weak var mapView: MKMapView!
+    
+    // location button
+    @IBAction func findMyLocationBtnClicked(_ sender: Any) {
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
+    }
+    
+    
     // menu transition to selected page or view from menu list
     func transitionToContent(_ menuType: MenuType) {
         let title = String(describing: menuType).capitalized

@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     @IBAction func menuButtonClicked(_ sender: UIBarButtonItem) {

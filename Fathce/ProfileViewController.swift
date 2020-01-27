@@ -52,6 +52,17 @@ class ProfileViewController: UIViewController {
             print(error)
             
         }
+       
+        do {
+            let userFromDatabase =  try self.database.prepare(self.userTable)
+            for userDetail in userFromDatabase {
+                print("userID:\(userDetail[self.id]),First Name: \(userDetail[self.fName]),Last Name: \(userDetail[self.lName]),Email ID: \(userDetail[self.eMail]),Date of Birth: \(userDetail[self.dOb])")
+            }
+        }
+        catch {
+            print(error)
+        }
+        
         
     }
     @IBOutlet weak var imgProfilePic: UIImageView!
@@ -70,7 +81,14 @@ class ProfileViewController: UIViewController {
         let emailId = self.txtEmail.text!
         let dOfBirth = self.txtDOB.text!
         print(imageUrl,firstName,lastName,emailId,dOfBirth)
-        
+        let inserData = self.userTable.insert(self.urlPic <- imageUrl,self.fName <- firstName,self.lName <- lastName,self.eMail <- emailId,self.dOb <- dOfBirth)
+        do {
+            try self.database.run(inserData)
+            print("user data has been inserted!")
+        }
+        catch {
+            print(error)
+        }
         
     }
     

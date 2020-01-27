@@ -82,10 +82,14 @@ class HomeViewController: UIViewController {
     
     func returnHome()
     {
-        guard let nextView = storyboard?.instantiateViewController(identifier:"navigationController") else {return}
-        nextView.modalPresentationStyle = .overCurrentContext
-        nextView.transitioningDelegate = nil
-        present(nextView, animated: true)
+        func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            transition.isPresenting = false
+            return transition
+        }
+//        guard let nextView = storyboard?.instantiateViewController(identifier:"navigationController") else {return}
+//        nextView.modalPresentationStyle = .overCurrentContext
+//        nextView.transitioningDelegate = nil
+//        present(nextView, animated: true)
     }
    
 }

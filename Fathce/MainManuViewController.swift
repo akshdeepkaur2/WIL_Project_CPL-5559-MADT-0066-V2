@@ -57,13 +57,7 @@ class MainManuViewController: UIViewController {
         //
                     case .goback:
                     returnHome()
-        //
-        //            case .home:
-        //            let view = UIView()
-        //            view.backgroundColor = .yellow
-        //            view.frame = self.view.bounds
-        //            self.view.addSubview(view)
-        //            self.topView = view
+       
                 default:
                     break
                 }
